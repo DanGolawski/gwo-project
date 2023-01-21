@@ -1,0 +1,9 @@
+.container {
+  width: 15vw;
+  padding: 10px;
+  border-radius: 20px;
+}
+
+img {
+  width: 100%;
+}

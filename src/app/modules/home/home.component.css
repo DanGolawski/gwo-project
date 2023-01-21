@@ -1,0 +1,19 @@
+video {
+  min-width: 100vw;
+  min-height: 100vh;
+  position: fixed;
+}
+
+.title {
+  text-align: center;
+  padding-top: 10vh;
+  padding-bottom: 10vh;
+  font-size: 5em;
+}
+
+main {
+  overflow: hidden;
+  width: 100vw;
+  height: 100vh;
+  position: relative;
+}

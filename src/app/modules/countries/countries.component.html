@@ -1,0 +1,17 @@
+<div class="background" [ngStyle]="{'background-image': 'url(' + selectedCountryFlagUrl + ')'}"></div>
+
+<div *ngIf="countries$ | async as countries" class="flex flex-row flex-wrap justify-content-between relative text-white align-items-baseline">
+  <div class="back-btn text-white" (click)="back()">POWRÓT</div>
+  <a
+    *ngFor="let country of countries"
+    class="country-btn p-5 border-2 m-3 border-round-md"
+    (click)="openDetailsDialog(country)"
+    (mouseover)="setBackgroundFlag(country.flagUrl)"
+    (mouseout)="setBackgroundFlag(null)"
+  >
+      <h1 class="white-space-nowrap">{{ country.name }}</h1>
+      <p class="p-2">( {{ country.officialName }} )</p>
+      <span>{{ country.subregion }}</span>
+      <span>{{ country.alt }}</span>
+  </a> 
+</div>

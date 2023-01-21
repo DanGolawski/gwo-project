@@ -1,0 +1,15 @@
+
+<video loop muted autoplay oncanplay="this.play()" onloadedmetadata="this.muted = true">
+  <source src="../assets/earth.mp4" type="video/mp4">
+</video>
+  
+<main>
+  <h1 class="title text-white">WYBIERZ KONTYNENT</h1>
+  <div class="flex justify-content-around">
+    <ng-container *ngFor="let code of keys(continentCodes)">
+      <a [routerLink]="['countries', code]">
+        <app-continent-button [continentCode]="getContinentName(code)"></app-continent-button>
+      </a>
+    </ng-container>
+  </div>
+</main>
