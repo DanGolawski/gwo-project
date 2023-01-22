@@ -1,7 +1,21 @@
 .container {
-  width: 15vw;
   padding: 10px;
   border-radius: 20px;
+  opacity: 0.8;
+  color: black;
+  transition: transform 0.5s;
+  -o-transition: transform 0.5s;
+  -moz-transition: transform 0.5s;
+  -webkit-transition: transform 0.5s;
+}
+
+.container:hover {
+  opacity: 1;
+  transform: translateY(-8%);
+  -o-transform: translateY(-8%);
+  -ms-transform: translateY(-8%);
+  -moz-transform: translateY(-8%);
+  -webkit-transform: translateY(-8%);
 }
 
 img {

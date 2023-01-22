@@ -1,9 +1,12 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import {DynamicDialogModule} from 'primeng/dynamicdialog';
+import {DialogService, DynamicDialogModule} from 'primeng/dynamicdialog';
 import { CountriesRoutingModule } from './countries-routing.module';
 import { CountriesComponent } from './countries.component';
 import { CountryDetailsComponent } from './country-details/country-details.component';
+import { PipesModule } from 'src/app/pipes/pipes.module';
+import { ButtonModule } from 'primeng/button';
+import { SharedModule } from '../shared/shared.module';
 
 @NgModule({
   declarations: [
@@ -13,8 +16,11 @@ import { CountryDetailsComponent } from './country-details/country-details.compo
   imports: [
     CommonModule,
     CountriesRoutingModule,
-    DynamicDialogModule
+    DynamicDialogModule,
+    PipesModule,
+    ButtonModule,
+    SharedModule
   ],
-  entryComponents: [CountryDetailsComponent]
+  providers: [DialogService]
 })
 export class CountriesModule { }

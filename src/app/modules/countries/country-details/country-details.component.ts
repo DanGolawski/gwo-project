@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { DynamicDialogConfig } from 'primeng/dynamicdialog';
+import { Country } from 'src/app/models/country';
 
 @Component({
   selector: 'app-country-details',
@@ -7,9 +9,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CountryDetailsComponent implements OnInit {
 
-  constructor() { }
+  protected selectedCountry: Country;
+
+  constructor(public config: DynamicDialogConfig) { }
 
   ngOnInit(): void {
+    this.selectedCountry = this.config.data;
   }
 
 }

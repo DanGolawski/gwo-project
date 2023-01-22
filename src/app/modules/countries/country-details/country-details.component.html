@@ -1,1 +1,16 @@
-<p>country-details works!</p>
+<div class="relative bg-white p-6">
+    <div class="flex flex-row">
+      <img class="flag" [src]="selectedCountry.flagUrl">
+      <div class="flex-1">
+        <h1 class="text-center">{{ selectedCountry.fifa | nullValue }}</h1>
+        <h2 class="text-center">( {{ selectedCountry.name | nullValue }} )</h2>
+      </div>
+    </div>
+    <div class="pt-5">
+      <p>Pełna nazwa: <strong>{{ selectedCountry.officialName | nullValue }}</strong></p>
+      <p>Stolica: <strong>{{ selectedCountry.capitalCity | nullValue }}</strong></p>
+      <p>Waluta: <strong>{{ selectedCountry.currencies | currencySymbol | nullValue }}</strong></p>
+      <p>Populacja: <strong>{{ selectedCountry.population | nullValue }}</strong></p>
+      <p>Podregion: <strong>{{ selectedCountry.subregion | nullValue }}</strong></p>
+    </div>
+</div>

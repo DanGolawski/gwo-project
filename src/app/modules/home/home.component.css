@@ -17,3 +17,12 @@ main {
   height: 100vh;
   position: relative;
 }
+
+a {
+  min-width: 200px;
+}
+
+.welcome-screen {
+  top: 0;
+  background-color: black;
+}

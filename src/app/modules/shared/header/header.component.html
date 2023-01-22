@@ -1,0 +1,4 @@
+<div class="flex flex-row justify-content-between p-2 z-2 w-full" [ngClass]="absolute ? 'h-absolute' : 'h-relative'">
+  <img class="h-6rem ml-3" src="../../../assets/logo.jpg">
+  <button *ngIf="showBackButton" (click)="back()" pButton type="button" label="Cofnij" class="p-button-secondary mr-3"></button>
+</div>

@@ -1,15 +1,21 @@
+<app-header [absolute]="true" [showBackButton]="false"></app-header>
+<app-footer [absolute]="true"></app-footer>
 
-<video loop muted autoplay oncanplay="this.play()" onloadedmetadata="this.muted = true">
+<video (loadeddata)="hideWelcomeScreen()" #video loop muted autoplay oncanplay="this.play()" onloadedmetadata="this.muted = true">
   <source src="../assets/earth.mp4" type="video/mp4">
 </video>
   
-<main>
-  <h1 class="title text-white">WYBIERZ KONTYNENT</h1>
-  <div class="flex justify-content-around">
+<main class="flex align-items-center">
+  <div class="flex flex-wrap justify-content-around p-4">
     <ng-container *ngFor="let code of keys(continentCodes)">
-      <a [routerLink]="['countries', code]">
+      <a [routerLink]="['countries', code]" class="w-2 m-2">
         <app-continent-button [continentCode]="getContinentName(code)"></app-continent-button>
       </a>
     </ng-container>
   </div>
 </main>
+
+<div *ngIf="showWelcomeScreen" class="welcome-screen absolute w-screen h-screen flex align-items-center justify-content-center z-4">
+  <h4 class="absolute text-white">WYBIERZ KONTYNENT</h4>
+  <img src="../../../assets/loading.gif">
+</div>

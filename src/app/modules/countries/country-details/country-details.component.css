@@ -1,0 +1,16 @@
+p {
+  border-bottom: 1px solid black;
+  font-size: 2em;
+  padding-top: 10px;
+}
+
+.flag {
+  height: 15vh;
+  -webkit-box-shadow: 1px 8px 22px 0px rgba(66, 68, 90, 1);
+  -moz-box-shadow: 1px 8px 22px 0px rgba(66, 68, 90, 1);
+  box-shadow: 1px 8px 22px 0px rgba(66, 68, 90, 1);
+}
+
+h1 {
+  font-size: 5em;
+}
