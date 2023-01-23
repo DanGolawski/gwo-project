@@ -48,7 +48,7 @@ export class CountriesComponent implements OnInit {
   }
 
   private getContinentFromUrl(): ContinentCodes | null {
-    const country = this.route.snapshot.paramMap.get('country') as ContinentCodes;
+    const country = this.route.snapshot.paramMap.get('continent') as ContinentCodes;
     return Object.values(ContinentCodes).includes(country) ? country : null;
   }
 
