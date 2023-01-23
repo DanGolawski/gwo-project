@@ -3,6 +3,8 @@
 <div class="relative">
   <app-header [absolute]="false"></app-header>
 
+  <h1 *ngIf="!(countries$ | async)?.length" class="text-center text-white">Brak danych do wyświetlenia</h1>
+
   <div *ngIf="countries$ | async as countries" class="flex flex-row flex-wrap justify-content-between text-white align-items-baseline mb-5">
     <a
       *ngFor="let country of countries"

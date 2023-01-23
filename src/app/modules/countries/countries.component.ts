@@ -7,6 +7,9 @@ import { DialogService } from 'primeng/dynamicdialog';
 import { CountryDetailsComponent } from './country-details/country-details.component';
 import { Country } from 'src/app/models/country';
 
+
+const BACKGROUND_IMAGE = 'assets/space.jpg';
+
 @Component({
   selector: 'app-countries',
   templateUrl: './countries.component.html',
@@ -15,7 +18,7 @@ import { Country } from 'src/app/models/country';
 export class CountriesComponent implements OnInit {
 
   protected countries$: Observable<Country[]>;
-  protected selectedCountryFlagUrl = '../../../assets/space.jpg';
+  protected selectedCountryFlagUrl = BACKGROUND_IMAGE;
 
   constructor(
     private route: ActivatedRoute,
@@ -32,10 +35,9 @@ export class CountriesComponent implements OnInit {
   }
 
   protected setBackgroundFlag(flagUrl: string | null): void {
-    if (flagUrl === this.selectedCountryFlagUrl) {
-      return;
+    if (flagUrl !== this.selectedCountryFlagUrl) {
+      this.selectedCountryFlagUrl = flagUrl ?? BACKGROUND_IMAGE;
     }
-    this.selectedCountryFlagUrl = flagUrl ?? '../../../assets/space.jpg';
   }
 
   protected openDetailsDialog(country: any): void {

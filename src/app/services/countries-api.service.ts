@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 import { map, Observable, tap } from 'rxjs';
 import { ContinentCodes } from '../enums/continents';
 import { Country } from '../models/country';
+import { API } from '../resources/api';
 
 @Injectable({
   providedIn: 'root'
@@ -12,7 +13,7 @@ export class CountriesApiService {
   constructor(private http: HttpClient) { }
 
   public getCountriesByContinentCode(continent: ContinentCodes): Observable<Country[]> {
-    return this.http.get(`https://restcountries.com/v3.1/region/${continent}`).pipe(
+    return this.http.get(API.getCountries(continent)).pipe(
       tap((data: any) => console.log(data[0].capital.length)),
       map((countries: any) => countries.map((country: any) => ({
         flagUrl: country.flags?.png,

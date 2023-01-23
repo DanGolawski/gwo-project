@@ -3,7 +3,8 @@ import { RouterModule, Routes } from '@angular/router';
 
 const routes: Routes = [
   { path: 'countries/:country', loadChildren: () => import('./modules/countries/countries.module').then(m => m.CountriesModule) },
-  { path: '', loadChildren: () => import('./modules/home/home.module').then(m => m.HomeModule) }
+  { path: '', loadChildren: () => import('./modules/home/home.module').then(m => m.HomeModule) },
+  { path: '**', redirectTo: '' }
 ];
 
 @NgModule({
